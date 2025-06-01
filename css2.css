@@ -1,0 +1,277 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.corpo {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.menu {
+    width: 100%;
+    height: 55px;
+    background-color: rgb(64, 64, 249);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu img {
+    width: 100px;
+    height: 35px;
+}
+
+.menu h3 {
+    color: white;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+/* Conteúdo */
+.outro-corpo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.pedido_finalizado_flex{
+    display: flex;
+
+    background-color: rgba(255, 255, 255, 0.612);
+    width: 100%;
+    min-height: 90vh;
+    position: absolute;
+    justify-content: center;
+}
+
+.pedido_finalizado_none{
+    display: none;
+
+    background-color: rgba(255, 255, 255, 0.612);
+    width: 100%;
+    min-height: 90vh;
+    position: absolute;
+    justify-content: center;
+}
+
+.caixa-finalizada{
+    width: 20%;
+    height: 400px;
+
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin: auto;
+
+}
+.caixa-finalizada img{
+    width: 150px;
+    margin: auto;
+}
+.img-center{
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+.cardapio {
+    display: flex;
+    gap: 30px;
+}
+
+/* Itens */
+.itens {
+    width: 450px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    background-color: #ffe0b2;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    height: 160px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.item:hover {
+    background-color: #ffc875;
+}
+
+.item img {
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Caixa de informações */
+.caixa-info {
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.caixa-info input[type="number"] {
+    margin: 5px 0 10px 5px;
+    padding: 5px;
+    width: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.caixa-info h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #444;
+}
+
+.caixa-info h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+/* Pedido não feito */
+.pedido_nao{
+    display: flex;
+    color: red;
+}
+
+.pedido_sim{
+    display: none;
+}
+
+/* Botões */
+.button-finalizar {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(64, 64, 249);
+    color: white;
+    border: 2px solid black;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-top: auto;
+    margin-left: 250px;
+}
+
+.button-finalizar:hover {
+    background-color: rgb(49, 49, 255);
+    border-color: rgb(34, 33, 59);
+}
+
+.button_pedido{
+    display: flex;
+}
+
+.diminuir{
+    margin-left: 5px;
+    border: solid black 1px;
+    background-color: white;
+    width: 15px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.button-finalizar p {
+    margin: 0;
+}
+
+.limpa {
+    width: 100px;
+    height: 30px;
+    align-self: center;
+    background-color: #ddd;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.limpa:hover {
+    background-color: #ccc;
+}
+
+/* ----------- RESPONSIVO ------------ */
+@media (max-width: 1024px) {
+    .cardapio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-finalizar {
+        margin: 20px auto;
+    }
+
+    .itens {
+        width: 100%;
+        max-width: 500px;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .caixa-info {
+        width: 90%;
+        max-width: 500px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .itens {
+        grid-template-columns: 1fr;
+    }
+
+    .menu h3 {
+        font-size: 14px;
+    }
+
+    .menu img {
+        width: 80px;
+        height: 30px;
+    }
+
+    .item img {
+        height: 100px;
+    }
+
+    .button-finalizar {
+        width: 100%;
+        max-width: 250px;
+    }
+}
